@@ -1,0 +1,16 @@
+<h1>电影详情</h1>
+
+<div class="detail_content">
+    <dl class="detail_dl">
+        <!--这里要用listArr,movie_list.html中获取的数据和这里的格式不一样，那里找的是listArr对象中的其中一个对象里面找数据，而这里获取的数据格式在整个数据里面找-->
+        <dt><img ng-src="{{listArr.images.large}}" width="300px" height="400px"></dt>
+        <dd>
+            <h4 ng-bind="listArr.title"></h4>
+            <p>类型:{{listArr.genres}}</p>
+            <p>导演: <span ng-repeat="dir in listArr.directors">{{dir.name}}</p>
+            <p>主演: <span ng-repeat="autor in listArr.casts">{{autor.name}}</span></p>
+            <p>主演: 本.阿弗莱喜克</p>
+        </dd>
+    </dl>
+</div>
+<div ng-bind="listArr.summary"></div>

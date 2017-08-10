@@ -1,0 +1,27 @@
+<div style="width:100%;height:300px;text-align: center;background-color:#fff;" ng-show="isLoading">
+    <img src="img/loading.gif" alt="加载中....." >
+</div>
+
+<div ng-hide="isLoading">
+<h1 ng-bind="listArr.title"></h1>
+<div class="list">
+    <a href="#!detail/{{movie.id}}" ng-repeat="movie in listArr.subjects" ng-switch="movie">
+        <dl>
+            <dt><img ng-src="{{movie.images.small}}" alt=""></dt>
+            <dd>
+                <h4 ng-bind="movie.title"></h4>
+                <p>类型: {{movie.genres}}</p>
+                <p>导演: <span ng-repeat="dir in movie.directors">{{dir.name}}</span></p>
+                <p>主演: <span ng-repeat="autor in movie.casts">{{autor.name}}</span></p>
+            </dd>
+            <span class="score" >45分</span>
+        </dl>
+    </a>
+</div>
+
+<div class="page">
+    <a ng-click ="page(true)">上一页</a>
+    <a ng-click="page(false)">下一页</a>
+</div>
+
+</div>

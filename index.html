@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="appController">
+<head>
+    <meta charset="UTF-8">
+    <title ng-bind="title"></title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="header" ng-controller="movieListController">
+
+    <span>豆瓣电影</span>
+    <div class="search">
+            <input type="text" placeholder="请输入要搜索的内容..." ng-model="searchD">
+            <button ng-click="search()">搜索</button>
+    </div>
+
+</div>
+<div class="content" >
+    <div class="content_l">
+        <ul>
+            <li class="active"><a href="#!movie/in_theaters">热门电影</a></li>
+            <li><a href="#!movie/coming_soon">即将上映</a></li>
+            <li><a href="#!movie/top250">top250电影</a></li>
+        </ul>
+
+    </div>
+    <div class="content_r" >
+        <div ng-view></div>
+    </div>
+</div>
+<script src="js/angular1.6.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
